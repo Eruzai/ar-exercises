@@ -10,4 +10,14 @@ class Store < ActiveRecord::Base
       errors.add(:mens_apparel, "or womens_apparel must be true")
     end
   end
+
+  before_destroy :employees?
+
+  private
+
+  def employees?
+    if employees.size != 0
+      throw(:abort)
+    end
+  end
 end
