@@ -9,4 +9,8 @@ require_relative './exercise_6'
 puts "Exercise 7"
 puts "----------"
 
-# Your code goes here ...
+@store_name = "Capital iron"
+
+@new_store = Store.create(name: @store_name, annual_revenue: 0, mens_apparel: true, womens_apparel: false)
+
+puts @new_store.errors.full_messages
